@@ -1,35 +1,25 @@
-const user = {
-    username: "anamika",
-    price: 999,
-    welcomeMessage: function() {
-        console.log(`${this.username} , welcome to website`);
-        console.log(this);
-    }
-}
-user.welcomeMessage()
-user.username = "priti"
-user.welcomeMessage()
-console.log(this);
-function chai(){
-let username = "anamika"
-console.log(this.username);
- }
-chai()
-//const chai = function () {
-   //let username = "anamika"
-   //console.log(this.username);
-//}
-//const chai =  () => {
-    //let username = "anamika"
-    //console.log(this);
-//}
-chai()
-const addTwo = (num1, num2) => {
-    return num1 + num2
- }
- //const addTwo = (num1, num2) =>  num1 + num2
- //const addTwo = (num1, num2) => ( num1 + num2 )
-//const addTwo = (num1, num2) => ({username: "hitesh"})
-console.log(addTwo(3, 4))
-const myArray = [2, 5, 3, 7, 8]
- myArray.forEach()
+let btn=document.querySelector("#btn");
+btn.onclick=(evt) => {
+    console.log(evt);
+    console.log(evt.type);
+    console.log(evt.target);
+};
+let div=document.querySelector("div");
+div.onmouseover=(evt) => {
+    console.log( "you are inside div");
+};
+let btn1=document.querySelector("#btn1");
+btn1.addEventListener("click",(evt) => {
+    console.log("you have clicked the button-handler 1");
+});
+btn1.addEventListener("click",() => {
+    console.log("you have clicked the button-handler 2");
+});
+const handler3=() => {
+    console.log("you have clicked the button-handler 3");
+};
+btn1.addEventListener("click",handler3);
+btn1.addEventListener("click",() => {
+    console.log("you have clicked the button-handler 4");
+});
+btn1.removeEventListener("click",handler3);

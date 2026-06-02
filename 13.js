@@ -1,37 +1,11 @@
-var c = 300
-let a = 300
-if (true) {
-    let a = 10
-    const b = 20
-    console.log("INNER: ", a); 
-}
-console.log(a);
-//console.log(b);
-console.log(c);
-function one(){
-    const username = "anamika"
-    function two(){
-        const website = "youtube"
-        console.log(username);
-    }
-    //console.log(website);
-     two()
-}
-one()
-if (true) {
-    const username = "anamika"
-    if (username === "anamika") {
-        const website = " youtube"
-        console.log(username + website);
-    }
-    console.log(website);
-}
-console.log(username);
-console.log(addone(5))
-function addone(num){
-    return num + 1
-}
-addTwo(5)
-const addTwo = function(num){
-    return num + 2
-}
+let btn1=document.querySelector("#btn1");
+btn1.onclick=( ) => {
+    console.log("Button 1 clicked");
+    let a=25;
+    a++;
+    console.log(a);
+};
+let div=document.querySelector("div1");
+div.onmouseover=() => {
+    console.log("Mouse over the div");
+};

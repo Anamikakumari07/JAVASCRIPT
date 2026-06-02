@@ -1,19 +1,15 @@
-const marvel_heros = ["thor", "Ironman", "spiderman"]
-const dc_heros = ["superman", "flash", "batman"]
-marvel_heros.push(dc_heros)
-console.log(marvel_heros);
-console.log(marvel_heros[3][1]);
-const allHeros = marvel_heros.concat(dc_heros)
-console.log(allHeros);
-const all_new_heros = [...marvel_heros, ...dc_heros]
-console.log(all_new_heros);
-const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]
-const real_another_array = another_array.flat(Infinity)
-console.log(real_another_array);
-console.log(Array.isArray("Hitesh"))
-console.log(Array.from("Hitesh"))
-console.log(Array.from({name: "hitesh"})) 
-let score1 = 100
-let score2 = 200
-let score3 = 300
-console.log(Array.of(score1, score2, score3));
+alert("hello");
+console.dir(document.body);
+let headings=document.getElementsByClassName("heading");
+console.dir(headings);
+console.log(headings);
+let idd=document.getElementById("myid");
+console.dir(idd);
+let tag=document.getElementsByTagName("p");
+console.dir(tag);
+let firstElement=document.querySelector(".heading");
+console.dir(firstElement);
+let element=document.querySelectorAll(".heading");
+console.dir(element);
+let div=document.querySelector("div");
+console.dir(div);
