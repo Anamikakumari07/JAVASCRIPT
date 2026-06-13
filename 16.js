@@ -1,36 +1,61 @@
-// if
-const isUserloggedIn = true
-const temperature = 41
-if ( temperature === 40 ){
-     console.log("less than 50");
-} else {
-    console.log("temperature is greater than 50");
- }
- console.log("Execute");
- const score = 200
- if (score > 100) {
-     let power = "fly"
-     console.log(`User power: ${power}`);
- }
- console.log(`User power: ${power}`);
-const balance = 1000
-if (balance > 500) console.log("test"),console.log("test2");
- if (balance < 500) {
-    console.log("less than 500");
-} else if (balance < 750) {
-    console.log("less than 750");   
- } else if (balance < 900) {
-    console.log("less than 750");   
- } else {
-    console.log("less than 1200");
- }
-const userLoggedIn = true
-const debitCard = true
-const loggedInFromGoogle = false
-const loggedInFromEmail = true
-if (userLoggedIn && debitCard && 2==3) {
-    console.log("Allow to buy course");
+const students = {
+    calctax1(){
+        console.log("tax rate is 10%");
+    },
+    calctax2:function(){
+        console.log("tax rate is 10%");
+    }
+};
+const karanarjun1={
+    salary:50000,
+};
+const karanarjun2={
+    salary:50000,
+};
+const karanarjun3={
+    salary:50000,
+};
+const karanarjun4={
+    salary:50000,
+};
+karanarjun1.__proto__=students;
+karanarjun2.__proto__=students;
+karanarjun3.__proto__=students;
+karanarjun4.__proto__=students;
+class toyotacar{
+    constructor(){
+        console.log("constructor");
+    }
+    start(){
+        console.log("start");
+    }
+    stop(){
+        console.log("stop");
+    }
 }
-if (loggedInFromGoogle || loggedInFromEmail) {
-    console.log("User logged in");
+let fortuner=new toyotacar();
+let texus=new toyotacar();
+class person{
+    constructor(){
+        console.log("constructor");
+        this.name="priti";
+    }
+    eat()
+    {
+        console.log("eat");
+    }
+    sleep()
+    {
+        console.log("sleep");
+    }
 }
+class engineer extends person{
+    constructor(branch){
+        super();
+        this.branch=branch;
+    }
+    work(){
+        console.log("work");
+    }
+}
+let engobj=new engineer("anamika");

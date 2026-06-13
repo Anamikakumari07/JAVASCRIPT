@@ -1,28 +1,97 @@
-const userEmail = []
-if (userEmail) {
-    console.log("Got user email");
-} else {
-    console.log("Don't have user email");
+console.log("one");
+console.log("two");
+function hello(){
+    console.log("hello");
 }
-// falsy values
-// false, 0, -0, BigInt 0n, "", null, undefined, NaN
-//truthy values
-// "0", 'false', " ", [], {}, function(){}
- if (userEmail.length === 0) {
-     console.log("Array is empty");
- }
-const emptyObj = {}
-if (Object.keys(emptyObj).length === 0) {
-    console.log("Object is empty");
+setTimeout(hello, 4000);
+console.log("three");
+console.log("four");
+function sum(a,b){
+    console.log(a+b);
 }
-// Nullish Coalescing Operator (??): null undefined
-let val1;
-// val1 = 5 ?? 10
-// val1 = null ?? 10
-// val1 = undefined ?? 15
-val1 = null ?? 10 ?? 20
-console.log(val1);
-// Terniary Operator
-// condition ? true : false
-const iceTeaPrice = 100
-iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80")
+function calculator(a,b,sumcallback){
+    sumcallback(a,b);
+}
+calculator(1,2,sum);
+function getdata(dataid,getnextdata){
+    setTimeout(()=>{
+        console.log("data",dataid);
+        if(getnextdata){
+            getnextdata();
+        }
+    }, 2000);
+}
+getdata(1,()=>{
+    getdata(2,()=>{
+        getdata(3);
+    });
+});
+function getdata(dataid,getnextdata){
+    setTimeout(()=>{
+        console.log("data",dataid);
+        if(getnextdata){
+            getnextdata();
+        }
+    }, 2000);
+}
+function getdata(dataid,getnextdata){
+    return new Promise((resolve,reject)=>{   
+    setTimeout(()=>{
+        console.log("data",dataid);
+        resolve("success");
+        if(getnextdata){
+            getnextdata();
+        }
+    }, 2000);
+});
+}
+function getdata(dataid,getnextdata){
+    return new Promise((resolve,reject)=>{   
+    setTimeout(()=>{
+        console.log("data",dataid);
+        reject("error");
+        if(getnextdata){
+            getnextdata();
+        }
+    }, 2000);
+});
+}
+const getdataPromise = ()=>{
+    return new Promise((resolve,reject)=>{
+            console.log("i am a promise");
+            resolve("success");
+        });
+}
+let promise = getdataPromise();
+promise.then((res)=>{
+    console.log("promise fulfilled",res);  
+});     
+promise.catch((error)=>{
+    console.log("promise rejected",error);
+});
+function getdata(dataid){
+    return new Promise((resolve,reject)=>{   
+    setTimeout(()=>{
+        console.log("data",dataid);
+        resolve("success");
+    }, 2000);
+});
+}
+getdata(1).then((res)=>{
+    console.log("data 1 received",res);
+    getdata(2).then((res)=>{
+        console.log("data 2 received",res);
+    });
+});
+function api(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("api called");
+            resolve("data received");
+        }, 2000);
+    });
+}
+async function getapi(){
+    await api();
+    await api();
+}
